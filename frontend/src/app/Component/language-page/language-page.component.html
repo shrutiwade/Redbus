@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedBus - Multi-Language Support</title>
+  <link rel="stylesheet" href="language-page.component.css">
+</head>
+<body>
+  <div class="language-container">
+    <h1>{{ welcomeMessage }}</h1>
+    <p>{{ description }}</p>
+    
+    <label for="language">Select Language:</label>
+    <select id="language" [(ngModel)]="selectedLanguage" (change)="changeLanguage()">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="ma">Marathi</option>
+      <option value="ge">German</option>
+      <option value="fr">French</option>
+    </select>
+  </div>
+    <script src="language-page.component.ts"></script>
+</body>
+</html>

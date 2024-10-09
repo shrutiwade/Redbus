@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hire a Bus</title>
+  <link rel="stylesheet" href="bushiring-page.component.css">
+</head>
+<body>
+
+  <div class="bus-hiring-container">
+    <h2>Hire a Bus</h2>
+    <form (ngSubmit)="hireBus()">
+      <div class="form-group">
+        <label for="busSize">Bus Size</label>
+        <select id="busSize" [(ngModel)]="busSize" name="busSize" required>
+          <option value="mini">Mini Bus (10-15 seats)</option>
+          <option value="medium">Medium Bus (16-30 seats)</option>
+          <option value="large">Large Bus (31-50 seats)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="amenities">Select Amenities</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" [(ngModel)]="amenities.ac" name="ac"> Air Conditioning</label>
+          <label><input type="checkbox" [(ngModel)]="amenities.wifi" name="wifi"> Wi-Fi</label>
+          <label><input type="checkbox" [(ngModel)]="amenities.tv" name="tv"> Television</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="route">Custom Route</label>
+        <input type="text" id="route" [(ngModel)]="route" name="route" placeholder="Enter custom route" required>
+      </div>
+
+      <button type="submit">Book Bus</button>
+    </form>
+  </div>
+
+  <script src="bushiring-page.component.ts"></script>
+</body>
+</html>
